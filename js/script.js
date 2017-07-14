@@ -55,28 +55,28 @@ $(document).ready(function() {
 			if (electricInput === 0 || electricInput === "undefined") {
 				electricScore = 0;
 			} else {
-				electricScore = (electricInput * 105)/64.28;
+				electricScore = (electricInput * 105)/13.04;
 			}
 			// console.log("Electric score is: " + electricScore);
 
 			if (gasInput === 0 || gasInput === "undefined") {
 				gasScore = 0;
 			} else {
-				gasScore = (gasInput * 105)/64.28;
+				gasScore = (gasInput * 105)/13.04;
 			}
 			// console.log("Gas score is: " + gasScore);
 
 			if (oilInput === 0 || oilInput === "undefined") {
 				oilScore = 0;
 			} else {
-				oilScore = (oilInput * 113)/64.28;
+				oilScore = (oilInput * 113)/13.04;
 			}
 			// console.log("Oil score is: " + oilScore);
 
 			if (carInput === 0 || carInput === "undefined") {
 				carScore = 0;
 			} else {
-				carScore = (carInput/0.621371) * 0.79;
+				carScore = (carInput/0.621371)* 0.79;
 			}
 			// console.log("Car score is: " + carScore);
 		
