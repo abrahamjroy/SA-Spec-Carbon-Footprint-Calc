@@ -10,7 +10,7 @@ This webpage demonstrated the use of a JS and CSS to create a Carbon Footprint c
 
 The images used are obtained from generic sites and can be customized to your liking
 
-the units have been adjusted to suit American Imperial units, and most of the code has been modified to suit the local geography
+the units have been adjusted to suit South African metric units, and most of the code has been modified to suit the local geography
 
 
 
