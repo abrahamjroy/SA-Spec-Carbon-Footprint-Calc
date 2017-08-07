@@ -17,7 +17,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" id="announcement-panel">
 				<h1 id="announcement-header">Carbon Footprint Calculator</h1>
-				<h3 id="announcement-subheader">Created by Abraham Roy and Team</h3>
+				<h3 id="announcement-subheader">Created by TCS Internship</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -30,7 +30,7 @@
 						<div class="form-group">
 							<label for="electric">Monthly electric bill</label>
 							<div class="input-group">
-								<div class="input-group-addon">R</div>
+								<div class="input-group-addon">ZAR</div>
 								<input class="form-control" id="electric" type="number" min="0" step="0.01">
 							</div>
 							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
@@ -38,7 +38,7 @@
 						<div class="form-group">
 							<label for="gas">Monthly natural gas bill</label>
 							<div class="input-group">
-								<div class="input-group-addon">R</div>
+								<div class="input-group-addon">ZAR</div>
 								<input class="form-control" id="gas" type="number" min="0" step="0.01">
 							</div>
 							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
@@ -47,7 +47,7 @@
 							<label for="oil">Monthly oil bill</label>
 							<p><i>Somes homes use oil as a fuel source for heating furnances or boilers, and is often abbreviated as HHO.</i></p>
 							<div class="input-group">
-								<div class="input-group-addon">R</div>
+								<div class="input-group-addon">ZAR</div>
 								<input class="form-control" id="oil" type="number" min="0" step="0.01">
 							</div>
 							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
@@ -55,22 +55,48 @@
 						<br/>
 						<h3 class="form-section-label" id="travel-label"><i class="fa fa-globe" aria-hidden="true"></i> Travel</h3>
 						<div class="form-group">
-							<label for="car">Annual distance driven on your car</label>
-							<div class="input-group-addon">Kilometers</div>
-							<input class="form-control" id="car" type="number" min="0" step="1">
+							<label for="car">Annual distance driven on your car if you posess a Petrol vehicle(Also enter values for Taxicabs and/or Tuk-Tuks)</label>
+							<div class="input-group-addon">Km</div>
+							<input class="form-control" id="carP" type="number" min="0" step="1">
 							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
 						</div>
+<div class="form-group">
+							<label for="car">Annual distance driven on your car if you posess a Deisel vehicle(Also enter values for Taxicabs and/or Tuk-Tuks)</</label>
+							<div class="input-group-addon">Km</div>
+							<input class="form-control" id="carD" type="number" min="0" step="1">
+							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+						</div>
+<div class="form-group">
+							<label for="car">Annual distance driven on your car if you posess a CNG powered  vehicle</label>
+							<div class="input-group-addon">Km</div>
+							<input class="form-control" id="carC" type="number" min="0" step="1">
+							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+						</div>
+<div class="form-group">
+							<label for="car">Annual distance driven on your Bike</label>
+							<div class="input-group-addon">Km</div>
+							<input class="form-control" id="bike" type="number" min="0" step="1">
+							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+						</div>
+<div class="form-group">
+							<label for="car">Annual distance travelled in a Train , Tram or Metro Rail</label>
+							<div class="input-group-addon">Km</div>
+							<input class="form-control" id="train" type="number" min="0" step="1">
+							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
+						</div>
+
+
 						<div class="form-group">
-							<label for="flights-4-less">Number of flights taken in the past year (4 hours or less)</label>
+							<label for="flights-4-less">Number of flights taken in the past year (4 hours or less or typically Domestic Flights)</label>
 							<input class="form-control" id="flights-4-less" type="number" min="0" step="1">
 							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
 						</div>
 						<div class="form-group">
-							<label for="flights-4-more">Number of flights taken in the past year (4 hours or more)</label>
+							<label for="flights-4-more">Number of flights taken in the past year (4 hours or more or International Flights)</label>
 							<input class="form-control" id="flights-4-more" type="number" min="0" step="1">
 							<span class="help-block">Enter 0 if not applicable. If left blank, will default to 0.</span>
 						</div>
-						<br/>
+					<br/>
 						<h3 class="form-section-label" id="waste-label"><i class="fa fa-recycle" aria-hidden="true"></i> Waste</h3>
 						<div class="form-group">
 							<label>Do you recycle newspaper?</label>
@@ -108,16 +134,24 @@
 						<button id="calculate-btn" type="button" class="btn btn-success btn-lg btn-block">Calculate</button>
 					</form>
 				</div>
-
 				<div id="results" class="text-center">
 					<h1 id="score"></h1>
 					<br/>
-					<p class="lead">This number represents the amount of greenhouse gases in units of carbon dioxide you emit per year</p>
+					<p class="lead">This number represents the amount of greenhouse gases in units of carbon dioxide you emit per year(Measured in Metric Tonnes)</p>
+
+
+	<br/>
+
+
+	<div id="donutchart" class="center" style="width: 800px; height: 500px;"></div>
+
+
+
 					<br/>
-					<h5 class="bg-success score-info">6,000 or below is EXCELLENT</h5>
-					<h5 class="bg-info score-info">6,000 to 15,999 is GOOD</h5>
-					<h5 class="bg-warning score-info">16,000 to 22,000 is AVERAGE</h5>
-					<h5 class="bg-danger score-info">22,000 or above is BAD</h5>
+					<h5 class="bg-success score-info">6 or below is EXCELLENT</h5>
+					<h5 class="bg-info score-info">6 to 15.999 is GOOD</h5>
+					<h5 class="bg-warning score-info">16 to 22 is AVERAGE</h5>
+					<h5 class="bg-danger score-info">22 or above is BAD</h5>
 					<br/>
 					<br/>
 					<br/>
@@ -147,6 +181,11 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="js/script.js" type="text/javascript"></script>
 </body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+ 
 </script>
 <h3 id="announcement-subheader">Your Current Location</h3>
 <div id="dvMap" style="width: 300px; height: 200px;bottom:-1px;left:520px;">
